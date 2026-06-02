@@ -1,5 +1,3 @@
-
-
 let index = 0;
 const quoteElement = document.getElementById("quote");
 
@@ -102,3 +100,18 @@ function toggleMenu() {
   const menu = document.getElementById("lang-menu");
   if (menu) menu.classList.toggle("hidden");
 }
+
+const paths = document.querySelectorAll(".ticker-text textPath");
+
+let offset = 0;
+
+function animateText() {
+  offset += 0.05;
+
+  paths[0].setAttribute("startOffset", offset + "%");
+  paths[1].setAttribute("startOffset", offset + 100 + "%");
+
+  requestAnimationFrame(animateText);
+}
+
+animateText();
