@@ -101,17 +101,32 @@ function toggleMenu() {
   if (menu) menu.classList.toggle("hidden");
 }
 
-const paths = document.querySelectorAll(".ticker-text textPath");
+// circulation texte
+const text1 = document.querySelector("#text1");
+const text2 = document.querySelector("#text2");
 
 let offset = 0;
+let speed = 0.05;
+let direction = 1;
 
-function animateText() {
-  offset += 0.05;
+function animate() {
+  offset += speed * direction;
 
-  paths[0].setAttribute("startOffset", offset + "%");
-  paths[1].setAttribute("startOffset", offset + 100 + "%");
+ 
+  if (offset >= 100) {
+    offset = 100;
+    direction = -1;
+  }
 
-  requestAnimationFrame(animateText);
+  if (offset <= 0) {
+    offset = 0;
+    direction = 1;
+  }
+
+  text1.setAttribute("startOffset", offset + "%");
+  text2.setAttribute("startOffset", (offset - 100) + "%");
+
+  requestAnimationFrame(animate);
 }
 
-animateText();
+animate();
