@@ -1,13 +1,8 @@
 {
-  "nav_accueil": "Accueil",
-  "nav_services": "Services",
-  "nav_tarifs": "Tarifs",
-  "nav_contact": "Contact",
-
-  
+   
   "tr-Services": "Nos services",
   "tr-Tarifs": "Tarifs",
-  "tr-Contact": "Contact",
+  "tr-cont": "Contact",
   "tr-entr&cons": "Entrainnement & conseils",
   "service_client": "Service client",
 
