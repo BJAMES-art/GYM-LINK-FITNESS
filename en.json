@@ -1,8 +1,7 @@
 {
- 
   "tr-Services": "Our Service",
   "tr-Tarifs": "Pricing",
-  "tr-Contat": "Contact",
+  "tr-cont": "Contact",
   "tr-entr&cons": "Training & device",
   "service_client": "Customer Service",
 
@@ -39,9 +38,11 @@
 
   "footer": "© 2026 Gym-Link Fitness. All rights reserved",
 
-  "trnavlink": "BACK",
+  "trnavlink": "HOME",
 
-  "sc_title": "HOW <br /> CAN WE <br /> HELP YOU <i class=\"fa-solid fa-question\"></i>",
+  "sc_title1": "HOW",
+  "sc_title2": "CAN WE",
+  "sc_title3": "HELP YOU ",
   "sc_intro": "Our team is here to support you. Check out our FAQ or contact us directly through our social media below.",
   "faq_title": "Frequently Asked Questions",
 
@@ -54,6 +55,6 @@
   "faq_q3": "Is coaching included? <i class=\"fas fa-chevron-down\"></i>",
   "faq_a3": "Yes, there is a coach available to help you better achieve your goals.",
 
-"faq_q4": "What are the different payment methods? <i class=\"fas fa-chevron-down\"></i>",
-"faq_a4": "For now, payment is made on-site in cash using the local currency (FBU)."
+  "faq_q4": "What are the different payment methods? <i class=\"fas fa-chevron-down\"></i>",
+  "faq_a4": "For now, payment is made on-site in cash using the local currency (FBU)."
 }

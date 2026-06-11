@@ -16,114 +16,141 @@
   </head>
 
   <body>
-    <!-- NAVBAR -->
-    <nav class="navbar">
-      <a href="index.html" class="nav-link">
-        <i class="fa-solid fa-arrow-left"></i>
-        <span data-key="trnavlink">RETOUR</span></a
-      >
+    <header>
+      <!-- NAVBAR -->
+      <nav class="navbar">
+        <a href="index.html" class="nav-link">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span data-key="trnavlink">RETOUR</span></a
+        >
+        <div class="ticker-wrapper">
+          <svg viewBox="0 0 1000 120" class="ticker-svg">
+            <path
+              id="ticker-path"
+              d="
+        M 120 60
+        Q 120 20 160 20
+        L 840 20
+        Q 880 20 880 60
+        Q 880 100 840 100
+        L 160 100
+        Q 120 100 120 60
+      "
+              fill="none"
+              stroke="rgba(249,178,51,0.2)"
+            />
 
-      <div class="menu-burger">
-        <i class="fas fa-bars" id="menu-btn"></i>
-      </div>
-    </nav>
+            <text class="ticker-text">
+              <textPath id="text1" href="#ticker-path">
+                NO PAIN NO GAIN • PUSH YOUR LIMITS • TRAIN HARD • DISCIPLINE
+                BUILDS CHAMPIONS • NEVER QUIT •
+              </textPath>
+            </text>
 
-    <!-- SIDEBAR -->
-    <!-- SIDEBAR -->
-    <div class="sidebar" id="sidebar">
-      <div class="close-btn" id="close-btn">&times;</div>
+            <text class="ticker-text">
+              <textPath id="text2" href="#ticker-path">
+                NO PAIN NO GAIN • PUSH YOUR LIMITS • TRAIN HARD • DISCIPLINE
+                BUILDS CHAMPIONS • NEVER QUIT •
+              </textPath>
+            </text>
+          </svg>
+        </div>
+        <div class="menu-burger">
+          <i class="fas fa-bars" id="menu-btn"></i>
+        </div>
+      </nav>
 
-      <ul>
-        <li>
-          <a href="nosservices.html" data-key="tr-Services">Nos Services</a>
-        </li>
-        <li><a href="tarifs.html" data-key="tr-Tarifs">Tarifs</a></li>
-        <li><a href="contact.html" data-key="tr-Contact">Contact</a></li>
-        <li class="active">
-          <a href="conseil&entr.html" data-key="tr-entr&cons">
-            Entraînements & conseils <span>→</span>
+      <!-- SIDEBAR -->
+      <div class="sidebar" id="sidebar">
+        <div class="close-btn" id="close-btn">&times;</div>
+
+        <ul>
+          <li>
+            <a href="nosservices.html" data-key="tr-Services">Nos Services</a>
+          </li>
+          <li><a href="tarifs.html" data-key="tr-Tarifs">Tarifs</a></li>
+          <li><a href="contact.html" data-key="tr-Contact">Contact</a></li>
+          <li class="active">
+            <a href="conseil&entr.html" data-key="tr-entr&cons">
+              Entraînements & conseils <span>→</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="bottom">
+          <a href="serviceclient.html">
+            <span data-key="service_client"></span>
+            <i class="fas fa-info-circle"></i>
           </a>
-        </li>
-      </ul>
 
-      <div class="bottom">
-        <a href="serviceclient.html" data-key="service_client">
-          <i class="fas fa-info-circle"></i>Service client
-        </a>
+          <div id="google_translate_element">
+            <div class="langue">
+              <p onclick="toggleMenu()">
+                <span id="current-lang">Français</span>
+                <i class="fas fa-chevron-down"></i>
+              </p>
 
-        <div id="google_translate_element">
-          <div class="langue">
-            <p onclick="toggleMenu()">
-              <span id="current-lang">Français</span>
-              <i class="fas fa-chevron-down"></i>
-            </p>
-
-            <ul id="lang-menu" class="hidden">
-              <li onclick="changeLang('fr')">Français</li>
-              <li onclick="changeLang('en')">English</li>
-            </ul>
+              <ul id="lang-menu" class="hidden">
+                <li onclick="changeLang('fr')">Français</li>
+                <li onclick="changeLang('en')">English</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </header>
 
     <!-- HERO -->
-    <section class="hero">
-      <h1 data-key="sc_title">
-        COMMENT <br />
-        POUVONS-NOUS <br />
-        VOUS AIDER <i class="fa-solid fa-question"></i>
+    <section class="hero-title">
+      <h1>
+        <span data-key="sc_title1">COMMENT</span>
+        <br />
+        <span data-key="sc_title2">POUVONS-NOUS</span>
+        <br />
+        <span data-key="sc_title3">VOUS AIDER</span>
+        <i class="fa-solid fa-question"></i>
       </h1>
     </section>
 
     <!-- FAQ -->
     <section class="faq">
-      <h2 data-key="faq_title">LES QUESTIONS LES PLUS COURANTES</h2>
+      <div class="faq-content">
+        <h2 data-key="faq_title"></h2>
 
-      <div class="faq-item">
-        <div class="faq-question" data-key="faq_q1">
-          Comment s'inscrire à la salle ?
-          <i class="fas fa-chevron-down"></i>
+        <div class="faq-item">
+          <div class="faq-question" data-key="faq_q1">
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer" data-key="faq_a1"></div>
         </div>
-        <div class="faq-answer" data-key="faq_a1">
-          Il suffit de venir à la salle ou de nous contacter via WhatsApp pour
-          finaliser votre inscription.
-        </div>
-      </div>
 
-      <div class="faq-item">
-        <div class="faq-question" data-key="faq_q2">
-          Quels sont les horaires d’ouverture ?
-          <i class="fas fa-chevron-down"></i>
+        <div class="faq-item">
+          <div class="faq-question" data-key="faq_q2">
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer" data-key="faq_a2"></div>
         </div>
-        <div class="faq-answer" data-key="faq_a2">
-          Nous sommes ouverts tous les jours de 6h à 22h.
-        </div>
-      </div>
 
-      <div class="faq-item">
-        <div class="faq-question" data-key="faq_q3">
-          Le coaching est-il inclus ?
-          <i class="fas fa-chevron-down"></i>
+        <div class="faq-item">
+          <div class="faq-question" data-key="faq_q3">
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer" data-key="faq_a3"></div>
         </div>
-        <div class="faq-answer" data-key="faq_a3">
-          Oui, le coaching est inclus dans l’abonnement mensuel premium.
-        </div>
-      </div>
 
-      <div class="faq-item">
-        <div class="faq-question" data-key="faq_q4">
-          Puis-je payer par mobile money ?
-          <i class="fas fa-chevron-down"></i>
+        <div class="faq-item">
+          <div class="faq-question" data-key="faq_q4">
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer" data-key="faq_a4"></div>
         </div>
-        <div class="faq-answer" data-key="faq_a4">
-          <!-- Oui, nous acceptons les paiements mobile money et en espèces. -->
-        </div>
+        <p class="faq-intro" data-key="sc_intro"></p>
+
+        <marquee class="hero-ticker" scrollamount="6">
+          NO PAIN NO GAIN . PUSH YOUR LIMITS . TRAIN HARD . STRONGER EVERY DAY .
+          DISCIPLINE BUILDS CHAMPIONS . NEVER QUIT .
+        </marquee>
       </div>
-      <p class="faq-intro" data-key="sc_intro">
-        <!-- Notre équipe est là pour vous accompagner. Consultez notre FAQ ou
-        contactez-nous directement via nos réseaux sociaux ci-dessous. -->
-      </p>
     </section>
 
     <!-- CONTACT -->

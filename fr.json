@@ -1,13 +1,7 @@
 {
-  "nav_accueil": "Accueil",
-  "nav_services": "Services",
-  "nav_tarifs": "Tarifs",
-  "nav_contact": "Contact",
-
-  
   "tr-Services": "Nos services",
   "tr-Tarifs": "Tarifs",
-  "tr-Contact": "Contact",
+  "tr-cont": "Contact",
   "tr-entr&cons": "Entrainnement & conseils",
   "service_client": "Service client",
 
@@ -44,12 +38,11 @@
 
   "footer": "© 2026 Gym-Link Fitness. Tout droit reservés",
 
+  "trnavlink": "HOME",
 
-  
-  "trnavlink":"RETOUR",
-
-
-  "sc_title": "COMMENT <br /> POUVONS-NOUS <br /> VOUS AIDER <i class=\"fa-solid fa-question\"></i>",
+  "sc_title1": "COMMENT",
+  "sc_title2": "POUVONS-NOUS",
+  "sc_title3": "VOUS AIDER",
   "sc_intro": "Notre équipe est là pour vous accompagner. Consultez notre FAQ ou contactez-nous directement via nos réseaux sociaux ci-dessous.",
 
   "faq_title": "LES QUESTIONS LES PLUS COURANTES",

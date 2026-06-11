@@ -1,5 +1,3 @@
-
-
 let index = 0;
 const quoteElement = document.getElementById("quote");
 
@@ -102,3 +100,32 @@ function toggleMenu() {
   const menu = document.getElementById("lang-menu");
   if (menu) menu.classList.toggle("hidden");
 }
+
+// circulation texte
+const text1 = document.querySelector("#text1");
+const text2 = document.querySelector("#text2");
+
+let offset = 0;
+let speed = 0.05;
+let direction = 1;
+
+function animate() {
+  offset += speed * direction;
+
+  if (offset >= 100) {
+    offset = 100;
+    direction = -1;
+  }
+
+  if (offset <= 0) {
+    offset = 0;
+    direction = 1;
+  }
+
+  text1.setAttribute("startOffset", offset + "%");
+  text2.setAttribute("startOffset", offset - 100 + "%");
+
+  requestAnimationFrame(animate);
+}
+
+animate();
