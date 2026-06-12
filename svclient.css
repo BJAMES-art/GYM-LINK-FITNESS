@@ -29,7 +29,6 @@ header {
   gap: 20px;
   overflow: hidden;
   height: 90px;
-  flex-wrap: wrap;
 }
 
 .logo {
