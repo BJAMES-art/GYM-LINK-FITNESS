@@ -71,11 +71,9 @@ header {
   justify-content: center;
   align-items: center;
   min-width: 0;
-  /* width: 70%; */
+  width: 50%;
   height: 100px;
   pointer-events: none;
-  flex: 1;
-  width: auto;
 }
 
 .ticker-svg {
