@@ -37,10 +37,6 @@ header {
   padding: 10px 15px;
 
   overflow: hidden;
-<<<<<<< HEAD
-=======
-  height: 90px;
->>>>>>> fd2cb40f4cdeddd5adf98b485949d28a0d9612e9
 }
 
 .logo {
@@ -262,7 +258,7 @@ header {
   flex-direction: row; /* Les photos sont côte à côte */
   justify-content: center;
   align-items: center;
-  gap: 20px; /* Espace entre les deux photos */
+  gap: 30%; /* Espace entre les deux photos */
 
   z-index: 10;
 }
@@ -284,6 +280,7 @@ header {
   font-size: 14px;
   display: none;
   text-align: center;
+  background: rgba(0, 0, 0, 0.6);
 }
 
 /* FOOTER */
