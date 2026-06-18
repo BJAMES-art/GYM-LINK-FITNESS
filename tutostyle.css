@@ -37,6 +37,10 @@ header {
   padding: 10px 15px;
 
   overflow: hidden;
+<<<<<<< HEAD
+=======
+  height: 90px;
+>>>>>>> fd2cb40f4cdeddd5adf98b485949d28a0d9612e9
 }
 
 .logo {
