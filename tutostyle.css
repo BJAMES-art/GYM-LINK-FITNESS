@@ -31,18 +31,18 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #111;
+
   width: 100%;
-  padding: 20px 8%;
-  gap: 20px;
+  max-width: 100%;
+  padding: 10px 15px;
+
   overflow: hidden;
-  height: 90px;
-  flex-wrap: wrap;
 }
 
 .logo {
   color: white;
   font-weight: 800;
+  flex-shrink: 1;
 }
 .logo span {
   color: #ff3c00;
@@ -68,6 +68,10 @@ header {
 
 .nav-link i {
   color: #ff3c00;
+}
+
+.nav-link span {
+  white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -240,7 +244,7 @@ header {
 
   display: flex;
   align-items: center;
-  padding-left: 0 8%;
+  padding-left: 8%;
   position: relative;
 }
 
@@ -294,10 +298,11 @@ footer {
     padding: 15px 5%;
     height: auto;
     flex-wrap: wrap;
+    gap: 30px;
   }
 
   .nav-right {
-    gap: 40px;
+    gap: 25px;
   }
 
   .ticker-wrapper {
@@ -314,6 +319,24 @@ footer {
   .nav-link {
     font-size: 16px;
   }
+
+  .middle-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .img-card {
+    width: 45%;
+    max-width: 160px;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+  }
 }
 
 @media (max-width: 768px) {
@@ -325,21 +348,28 @@ footer {
     display: block;
   }
   .navbar {
+    padding: 10px 15px;
+    gap: 10px;
+  }
+
+  .nav-right {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
-    padding: 15px 5%;
-    height: auto;
+    gap: 20px;
+  }
+
+  .nav-link {
+    font-size: 18px;
+  }
+
+  .menu-burger {
+    font-size: 24px;
   }
 
   .logo {
     font-size: 20px;
     line-height: 1.2;
-  }
-
-  /* cacher menu desktop */
-  .nav-right {
-    display: none;
   }
 
   /* burger visible */
@@ -347,25 +377,45 @@ footer {
     display: flex;
     font-size: 28px;
   }
+
+  .middle-images {
+    flex-direction: column;
+    gap: 80px;
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .img-card {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+  }
 }
 
 @media screen and (max-width: 480px) {
   .navbar {
+    padding: 10px 15px;
+    gap: 10px;
+  }
+
+  .nav-right {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
-    padding: 15px 5%;
-    height: auto;
+    gap: 10px;
+  }
+
+  .nav-link {
+    font-size: 18px;
+  }
+
+  .menu-burger {
+    font-size: 24px;
   }
 
   .logo {
     font-size: 20px;
     line-height: 1.2;
-  }
-
-  /* cacher menu desktop */
-  .nav-right {
-    display: none;
   }
 
   /* burger visible */
@@ -375,5 +425,23 @@ footer {
   }
   .ticker-wrapper {
     display: none;
+  }
+
+  .middle-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .img-card {
+    width: 45%;
+    max-width: 160px;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
   }
 }
