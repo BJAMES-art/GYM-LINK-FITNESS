@@ -71,9 +71,11 @@ header {
   justify-content: center;
   align-items: center;
   min-width: 0;
-  width: 50%;
+  /* width: 70%; */
   height: 100px;
   pointer-events: none;
+  flex: 1;
+  width: auto;
 }
 
 .ticker-svg {
@@ -468,8 +470,6 @@ footer {
   margin-top: 40px;
 }
 
-
-
 /* ===========================
    RESPONSIVITE
 =========================== */
@@ -501,7 +501,6 @@ footer {
   }
 }
 
-
 @media (max-width: 992px) {
   .navbar {
     padding: 15px 5%;
@@ -524,7 +523,6 @@ footer {
     margin: auto;
   }
 }
-
 
 @media (max-width: 768px) {
   /* Masquer le ticker */
