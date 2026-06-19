@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  /* outline: 1px solid green; */
 }
 
 body {
@@ -25,6 +26,7 @@ header {
   align-items: center;
   background: #111;
   width: 100%;
+  max-width: 100%;
   padding: 20px 8%;
   gap: 20px;
   overflow: hidden;
@@ -51,10 +53,12 @@ header {
 }
 
 .nav-right {
+  /* display: flex;
+  align-items: center;
+  flex-shrink: 1; */
   display: flex;
   align-items: center;
-  gap: 80px;
-  flex-shrink: 1;
+  gap: clamp(10px, 3vw, 30px);
 }
 
 .nav-link i {
@@ -71,7 +75,6 @@ header {
   justify-content: center;
   align-items: center;
   min-width: 0;
-  /* width: 70%; */
   height: 100px;
   pointer-events: none;
   flex: 1;
@@ -120,12 +123,13 @@ header {
   color: white;
   z-index: 11;
 }
+
 /* SIDEBAR */
 .sidebar {
   position: fixed;
   top: 0;
   right: -100%;
-  width: 300px;
+  width: 320px;
   height: 100%;
   background: white;
   padding: 20px;
@@ -306,16 +310,17 @@ header {
 
   display: flex;
   align-items: center;
-  padding-left: 0 8%;
+  padding-left: 8%;
   position: relative;
 }
 
 .faq-content {
-  max-width: 500px;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-left: 10%;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .faq h2 {
