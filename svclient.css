@@ -9,7 +9,6 @@ body {
   background: #0a0a0a;
   color: white;
   font-weight: bold;
-  overflow-x: hidden;
 }
 
 header {
@@ -25,20 +24,20 @@ header {
   justify-content: space-between;
   align-items: center;
   background: #111;
+
   width: 100%;
-  padding: 20px 8%;
-  gap: 20px;
+  max-width: 100%;
+  padding: 10px 15px;
+
   overflow: hidden;
-  height: 90px;
-  flex-wrap: nowrap;
 }
 
 .logo {
   color: white;
   font-weight: 800;
   flex-shrink: 1;
-  min-width: 0;
 }
+
 .logo span {
   color: #ff3c00;
 }
@@ -50,7 +49,7 @@ header {
   color: white;
   font-size: 18px;
   gap: 8px;
-  overflow-wrap: break-word;
+  white-space: nowrap;
   transition: 0.3s;
 }
 
@@ -58,10 +57,15 @@ header {
   display: flex;
   align-items: center;
   gap: 80px;
+  flex-shrink: 0;
 }
 
 .nav-link i {
   color: #ff3c00;
+}
+
+.nav-link span {
+  white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -74,10 +78,9 @@ header {
   justify-content: center;
   align-items: center;
   min-width: 0;
+  width: 70%;
   height: 100px;
   pointer-events: none;
-  flex: 1;
-  width: auto;
 }
 
 .ticker-svg {
@@ -122,13 +125,12 @@ header {
   color: white;
   z-index: 11;
 }
-
 /* SIDEBAR */
 .sidebar {
   position: fixed;
   top: 0;
   right: -100%;
-  width: 320px;
+  width: 350px;
   height: 100%;
   background: white;
   padding: 20px;
@@ -179,7 +181,6 @@ header {
 .bottom {
   margin-top: 40px;
 }
-
 .bottom a {
   text-decoration: none;
   font-weight: bold;
@@ -483,15 +484,16 @@ footer {
     padding: 15px 5%;
     height: auto;
     flex-wrap: wrap;
+    gap: 30px;
   }
 
   .nav-right {
-    gap: 40px;
+    gap: 25px;
   }
 
   .ticker-wrapper {
     width: 100%;
-    order: 3;
+    order: 1;
     margin-top: 10px;
   }
 
@@ -534,6 +536,9 @@ footer {
     display: none;
   }
 
+  .hero-ticker {
+    display: block;
+  }
   .navbar {
     padding: 10px 15px;
     gap: 10px;
@@ -541,9 +546,9 @@ footer {
 
   .nav-right {
     display: flex;
-    flex-direction: row; /* Toujours côte à côte */
+    flex-direction: row;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
   }
 
   .nav-link {
@@ -552,6 +557,17 @@ footer {
 
   .menu-burger {
     font-size: 24px;
+  }
+
+  .logo {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  /* burger visible */
+  .menu-burger {
+    display: flex;
+    font-size: 28px;
   }
 
   .hero {
@@ -632,12 +648,20 @@ footer {
    PETITS SMARTPHONES
 =========================== */
 @media (max-width: 480px) {
-  .nav-link {
-    font-size: 15px;
+  .navbar {
+    padding: 10px 15px;
+    gap: 10px;
   }
 
   .nav-right {
-    gap: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-link {
+    font-size: 18px;
   }
 
   .menu-burger {
@@ -654,10 +678,10 @@ footer {
     display: flex;
     font-size: 28px;
   }
-
   .ticker-wrapper {
     display: none;
   }
+
   .hero {
     padding-top: 100px;
   }
