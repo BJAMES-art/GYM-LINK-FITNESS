@@ -233,7 +233,7 @@ header {
 }
 
 .hero {
-  min-height: 100vh;
+  height: 100vh;
   background-image: url("IMAGE/Backgroung2.jpg");
   background-size: cover;
   background-position: center;
