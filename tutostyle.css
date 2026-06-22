@@ -24,7 +24,6 @@ header {
   width: 100%;
   z-index: 1000;
 }
-/* NAVBAR */
 
 /* NAVBAR */
 .navbar {
@@ -233,7 +232,7 @@ header {
 }
 
 .hero {
-  height: 100vh;
+  height: 95vh;
   background-image: url("IMAGE/Backgroung2.jpg");
   background-size: cover;
   background-position: center;
