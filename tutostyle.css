@@ -232,7 +232,7 @@ header {
 }
 
 .hero {
-  height: 95vh;
+  height: 80vh;
   background-image: url("IMAGE/Backgroung2.jpg");
   background-size: cover;
   background-position: center;
