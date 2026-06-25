@@ -251,16 +251,16 @@ header {
   transform: translate(-50%, -50%);
 
   display: flex;
-  flex-direction: row; /* Les photos sont côte à côte */
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 30%; /* Espace entre les deux photos */
+  gap: 30%;
 
   z-index: 10;
 }
 
 .img-card {
-  width: 300px; /* Réduis ou augmente selon ton besoin */
+  width: 300px;
   height: 200px;
   object-fit: cover;
   border-radius: 15px;
