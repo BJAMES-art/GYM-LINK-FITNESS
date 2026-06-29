@@ -255,12 +255,19 @@ header {
   font-size: 14px;
 
   background: rgba(0, 0, 0, 0.6);
-  padding: 8px 15px;
+  padding: 8px 10px;
   border-radius: 20px;
 
   backdrop-filter: blur(5px);
 }
+.location-btn {
+  cursor: pointer;
+  color: #ddd;
+}
 
+.location-btn:hover {
+  color: #ff3c00;
+}
 .address i {
   color: #ff3c00;
   font-size: 16px;
@@ -279,7 +286,7 @@ header {
 }
 
 .btn:hover {
-  background: #ddd;
+  background: #ff3c00;
 }
 
 .hero-ticker {
@@ -292,6 +299,88 @@ header {
   font-size: 14px;
   display: none;
   text-align: center;
+}
+
+/* QUI SOMME NOUS */
+
+.about-frame {
+  width: 100%;
+  overflow: hidden;
+}
+
+.about-slider {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.about-card {
+  position: absolute;
+  inset: 0;
+
+  transform: translateX(100%);
+  opacity: 0;
+
+  transition:
+    transform 0.55s ease,
+    opacity 0.55s ease;
+
+  pointer-events: none;
+}
+
+.about-card.active {
+  transform: translateX(0);
+  opacity: 1;
+  z-index: 3;
+  pointer-events: auto;
+}
+
+.about-card.prev {
+  transform: translateX(-100%);
+  opacity: 0;
+  z-index: 1;
+}
+
+.about-card.next {
+  transform: translateX(100%);
+  opacity: 0;
+  z-index: 2;
+}
+
+.about-card img {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.about-content {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  text-align: center;
+  padding: 30px;
+
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.about-content h2 {
+  color: #f9b233;
+  position: absolute;
+  left: 40px;
+  top: 40px;
+}
+
+.about-content p {
+  max-width: 600px;
 }
 
 /* SERVICES */
@@ -468,6 +557,25 @@ footer {
 }
 
 /* TABLETTE */
+
+@media (min-width: 1600px) {
+  .about-slider {
+    height: 750px;
+  }
+
+  .about-content h1 {
+    font-size: 4rem;
+  }
+
+  .about-content h2 {
+    font-size: 2rem;
+  }
+
+  .about-content p {
+    font-size: 1.25rem;
+    max-width: 850px;
+  }
+}
 @media (max-width: 1024px) {
   .navbar {
     padding: 15px 5%;
@@ -488,9 +596,10 @@ footer {
   .hero p {
     font-size: 16px;
   }
+
   .hero-address {
     position: absolute;
-    bottom: 225px; /* juste au-dessus du ticker */
+    bottom: 225px;
     left: 4%;
 
     display: flex;
@@ -555,6 +664,32 @@ footer {
 
 /* MOBILE */
 
+@media (max-width: 992px) {
+  .about-slider {
+    height: 500px;
+  }
+
+  .about-content {
+    padding: 30px;
+  }
+
+  .about-content h2 {
+    left: 25px;
+    top: 25px;
+    font-size: 1.3rem;
+  }
+
+  .about-content h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .about-content p {
+    max-width: 90%;
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 768px) {
   /* NAVBAR */
   .logo {
@@ -584,8 +719,33 @@ footer {
     font-size: 14px;
     padding: 10px 20px;
   }
-  /* A CHANGE DANS LE SITE WEB  */
 
+  /* A CHANGE DANS LE SITE WEB  */
+  .about-slider {
+    height: 450px;
+  }
+
+  .about-content {
+    padding: 25px;
+  }
+
+  .about-content h2 {
+    position: static;
+    align-self: flex-start;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+  }
+
+  .about-content h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .about-content p {
+    font-size: 0.95rem;
+    max-width: 100%;
+    line-height: 1.7;
+  }
   .cards {
     flex-direction: column;
     gap: 20px;
@@ -617,6 +777,31 @@ footer {
   .price h3,
   .price .amount {
     text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-slider {
+    height: 420px;
+  }
+
+  .about-content {
+    padding: 20px;
+  }
+
+  .about-content h2 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+
+  .about-content h1 {
+    font-size: 1.6rem;
+    line-height: 1.25;
+  }
+
+  .about-content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
   }
 }
 
@@ -701,5 +886,28 @@ footer {
 
   .price .amount {
     font-size: 22px;
+  }
+}
+
+@media (max-width: 380px) {
+  .about-slider {
+    height: 380px;
+  }
+
+  .about-content {
+    padding: 15px;
+  }
+
+  .about-content h2 {
+    font-size: 0.9rem;
+  }
+
+  .about-content h1 {
+    font-size: 1.3rem;
+  }
+
+  .about-content p {
+    font-size: 0.8rem;
+    line-height: 1.5;
   }
 }

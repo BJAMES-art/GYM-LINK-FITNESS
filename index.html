@@ -14,7 +14,6 @@
       rel="stylesheet"
     />
   </head>
-
   <body>
     <header>
       <nav class="navbar">
@@ -108,8 +107,14 @@
         <p data-key="hero_text"></p>
 
         <div class="address">
-          <i class="fas fa-map-marker-alt"></i>
-          <span data-key="location"></span>
+          <a
+            href="https://www.google.com/maps?q=-3.364825, 29.401467"
+            target="_blank"
+            class="location-btn"
+          >
+            <i class="fas fa-map-marker-alt"></i>
+            <span data-key="location"></span>
+          </a>
         </div>
 
         <a href="A propos.html" class="btn" data-key="about_btn"> </a>
@@ -118,6 +123,86 @@
           NO PAIN NO GAIN • PUSH YOUR LIMITS • TRAIN HARD • STRONGER EVERY DAY •
           DISCIPLINE BUILDS CHAMPIONS • NEVER QUIT •
         </marquee>
+      </div>
+    </section>
+
+    <section class="about-gym" id="about">
+      <!-- Bordure décorative -->
+      <div class="about-frame">
+        <!-- Slider -->
+        <div class="about-slider">
+          <div class="about-card">
+            <img src="IMAGE/image1quisomme-nous.jpg" alt="" />
+            <div class="about-content">
+              <h2>QUI SOMMES-NOUS</h2>
+              <h1>
+                PLUS QU'UNE SALLE,<br />
+                UNE COMMUNAUTÉ.
+              </h1>
+              <p>
+                GYM-LINK FITNESS est un espace moderne dédié à la santé, au
+                bien-être et à la performance. Notre mission est d'accompagner
+                chaque membre vers ses objectifs grâce à un environnement
+                motivant et des équipements de qualité.
+              </p>
+            </div>
+          </div>
+
+          <div class="about-card">
+            <img src="IMAGE/image2quisomme-nous.jpg" alt="" />
+            <div class="about-content">
+              <h2>QUI SOMMES-NOUS</h2>
+              <h1>
+                PLUS QU'UNE SALLE,<br />
+                UNE COMMUNAUTÉ.
+              </h1>
+
+              <p>
+                GYM-LINK FITNESS est un espace moderne dédié à la santé, au
+                bien-être et à la performance. Notre mission est d'accompagner
+                chaque membre vers ses objectifs grâce à un environnement
+                motivant et des équipements de qualité.
+              </p>
+            </div>
+          </div>
+
+          <div class="about-card">
+            <img src="IMAGE/image3quisomme-nous.jpg" alt="" />
+            <div class="about-content">
+              <h2>QUI SOMMES-NOUS</h2>
+              <h1>
+                PLUS QU'UNE SALLE,<br />
+                UNE COMMUNAUTÉ.
+              </h1>
+
+              <p>
+                GYM-LINK FITNESS est un espace moderne dédié à la santé, au
+                bien-être et à la performance. Notre mission est d'accompagner
+                chaque membre vers ses objectifs grâce à un environnement
+                motivant et des équipements de qualité.
+              </p>
+            </div>
+          </div>
+
+          <div class="about-card">
+            <img src="IMAGE/image4quisomme-nous.jpg" alt="" />
+            <div class="about-content">
+              <h2>QUI SOMMES-NOUS</h2>
+              <h1>
+                PLUS QU'UNE SALLE,<br />
+                UNE COMMUNAUTÉ.
+              </h1>
+
+              <p>
+                GYM-LINK FITNESS est un espace moderne dédié à la santé, au
+                bien-être et à la performance. Notre mission est d'accompagner
+                chaque membre vers ses objectifs grâce à un environnement
+                motivant et des équipements de qualité.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Texte -->
       </div>
     </section>
 
@@ -202,5 +287,128 @@
       <p data-key="footer"></p>
     </footer>
     <script src="translate.js"></script>
+    <script>
+      const slider = document.querySelector(".about-slider");
+      const cards = document.querySelectorAll(".about-card");
+
+      let current = 0;
+      let timer;
+
+      function updateCards() {
+        cards.forEach((card, index) => {
+          card.classList.remove("active", "prev", "next");
+
+          if (index === current) {
+            card.classList.add("active");
+          } else if (index < current) {
+            card.classList.add("prev");
+          } else {
+            card.classList.add("next");
+          }
+        });
+      }
+
+      updateCards();
+
+      function next() {
+        current++;
+
+        if (current >= cards.length) {
+          current = 0;
+        }
+
+        updateCards();
+      }
+
+      function prev() {
+        current--;
+
+        if (current < 0) {
+          current = cards.length - 1;
+        }
+
+        updateCards();
+      }
+
+      function startAuto() {
+        timer = setInterval(next, 5000);
+      }
+
+      function stopAuto() {
+        clearInterval(timer);
+      }
+
+      startAuto();
+
+      //--------------- Swipe ----------------
+
+      let startX = 0;
+      let moveX = 0;
+      let isDown = false;
+
+      function begin(x) {
+        startX = x;
+        moveX = x;
+        isDown = true;
+
+        stopAuto();
+      }
+
+      function move(x) {
+        if (!isDown) return;
+
+        moveX = x;
+      }
+
+      function end() {
+        if (!isDown) return;
+
+        let distance = moveX - startX;
+
+        if (distance < -80) {
+          next();
+        } else if (distance > 80) {
+          prev();
+        }
+
+        startAuto();
+
+        isDown = false;
+      }
+
+      // Mobile
+
+      slider.addEventListener("touchstart", (e) => {
+        begin(e.touches[0].clientX);
+      });
+
+      slider.addEventListener("touchmove", (e) => {
+        move(e.touches[0].clientX);
+      });
+
+      slider.addEventListener("touchend", end);
+
+      // PC
+
+      slider.addEventListener("mousedown", (e) => {
+        begin(e.clientX);
+      });
+
+      window.addEventListener("mousemove", (e) => {
+        move(e.clientX);
+      });
+
+      window.addEventListener("mouseup", end);
+
+      // Pause lorsque le doigt reste posé
+
+      slider.addEventListener("mouseenter", stopAuto);
+
+      slider.addEventListener("mouseleave", () => {
+        if (!isDown) {
+          startAuto();
+        }
+      });
+    </script>
   </body>
 </html>
