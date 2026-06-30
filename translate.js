@@ -129,3 +129,125 @@ function animate() {
 }
 
 animate();
+
+const slider = document.querySelector(".about-slider");
+const cards = document.querySelectorAll(".about-card");
+
+let current = 0;
+let timer;
+
+function updateCards() {
+  cards.forEach((card, index) => {
+    card.classList.remove("active", "prev", "next");
+
+    if (index === current) {
+      card.classList.add("active");
+    } else if (index < current) {
+      card.classList.add("prev");
+    } else {
+      card.classList.add("next");
+    }
+  });
+}
+
+updateCards();
+
+function next() {
+  current++;
+
+  if (current >= cards.length) {
+    current = 0;
+  }
+
+  updateCards();
+}
+
+function prev() {
+  current--;
+
+  if (current < 0) {
+    current = cards.length - 1;
+  }
+
+  updateCards();
+}
+
+function startAuto() {
+  timer = setInterval(next, 5000);
+}
+
+function stopAuto() {
+  clearInterval(timer);
+}
+
+startAuto();
+
+//--------------- Swipe ----------------
+
+let startX = 0;
+let moveX = 0;
+let isDown = false;
+
+function begin(x) {
+  startX = x;
+  moveX = x;
+  isDown = true;
+
+  stopAuto();
+}
+
+function move(x) {
+  if (!isDown) return;
+
+  moveX = x;
+}
+
+function end() {
+  if (!isDown) return;
+
+  let distance = moveX - startX;
+
+  if (distance < -80) {
+    next();
+  } else if (distance > 80) {
+    prev();
+  }
+
+  startAuto();
+
+  isDown = false;
+}
+
+// Mobile
+
+slider.addEventListener("touchstart", (e) => {
+  begin(e.touches[0].clientX);
+});
+
+slider.addEventListener("touchmove", (e) => {
+  move(e.touches[0].clientX);
+});
+
+slider.addEventListener("touchend", end);
+
+// PC
+
+slider.addEventListener("mousedown", (e) => {
+  begin(e.clientX);
+});
+
+window.addEventListener("mousemove", (e) => {
+  move(e.clientX);
+});
+
+window.addEventListener("mouseup", end);
+
+// Pause lorsque le doigt reste posé
+
+slider.addEventListener("mouseenter", stopAuto);
+
+slider.addEventListener("mouseleave", () => {
+  if (!isDown) {
+    startAuto();
+  }
+});

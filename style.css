@@ -377,6 +377,7 @@ header {
   position: absolute;
   left: 40px;
   top: 40px;
+  font-size: 35px;
 }
 
 .about-content p {
