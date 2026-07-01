@@ -779,6 +779,28 @@ footer {
   .price .amount {
     text-align: center;
   }
+
+  .contact {
+    padding: 70px 20px;
+  }
+
+  .contact h2 {
+    font-size: 25px;
+  }
+
+  .contact p {
+    font-size: 15px;
+  }
+
+  .social-links {
+    gap: 15px;
+  }
+
+  .social-links a {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -887,6 +909,12 @@ footer {
 
   .price .amount {
     font-size: 22px;
+  }
+
+  .social-links a {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
   }
 }
 
