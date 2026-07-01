@@ -10,7 +10,7 @@ body {
   background: black;
   color: white;
   font-weight: bold;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 a {
